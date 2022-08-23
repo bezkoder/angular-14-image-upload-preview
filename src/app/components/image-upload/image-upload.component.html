@@ -17,7 +17,7 @@
 </div>
 
 <div>
-  <img [src]="preview" class="preview">
+  <img [src]="preview" class="preview" />
 </div>
 
 <div *ngIf="currentFile && progress" class="progress my-3">
@@ -39,11 +39,8 @@
 
 <div class="card mt-3">
   <div class="card-header">List of Images</div>
-  <ul
-    class="list-group list-group-flush"
-    *ngFor="let image of imageInfos | async"
-  >
-    <li class="list-group-item">
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let image of imageInfos | async" class="list-group-item">
       <p><a href="{{ image.url }}">{{ image.name }}</a></p>
       <img src="{{ image.url }}" alt="{{ image.name }}" height="80px" />
     </li>
